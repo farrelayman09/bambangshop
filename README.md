@@ -77,7 +77,15 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
-
+1. In my opinion, if we have a there is an observer with many classes, we will need to make an interface/trait.
+But, because in bambangshop case, Subscriber has only one class so for now a single model struct is enough.
+2. In Rust, While we can use a Vec to store identifiers, ensuring uniqueness requires iterating over the Vec to check for duplicates each time you add a new identifier. 
+This approach has a time complexity of O(n), whereas with DashMap we can do operations with a complexity of O(1). It also ensures uniqueness effectively.
+Therefore, in my opinion,
+using DashMap is the better alternative.
+3. In my opinion, we need to use DashMap because its suitable for multithreading use.
+   while the Singleton pattern could be technically applied in Rust, using DashMap or similar thread-safe
+data structures is a more appropriate and safer approach to ensure thread safety when dealing with shared mutable state like SUBSCRIBERS and concurrent models.
 #### Reflection Publisher-2
 
 #### Reflection Publisher-3
