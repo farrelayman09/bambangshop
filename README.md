@@ -87,5 +87,12 @@ using DashMap is the better alternative.
    while the Singleton pattern could be technically applied in Rust, using DashMap or similar thread-safe
 data structures is a more appropriate and safer approach to ensure thread safety when dealing with shared mutable state like SUBSCRIBERS and concurrent models.
 #### Reflection Publisher-2
-
+1. One of the main advantages of the separation is to adhere to the Separation of Concerns (SoC) principle.
+This principle is advantageous because we have a clear specific distinction between the two aspects. The Service layer typically contains 
+application-specific logic that operates on the Model. Meanwhile, The Repository layer abstracts away the details of data access and manipulation.
+2. I think that if we only use the Model without separating concerns into Service and Repository layers, the code complexity 
+within each Model (Program, Subscriber, Notification) would increase significantly. This is because the Model is forced to handle multiple uses
+in terms of business logic, workflows, subscriber-related logic which will in turn become overly complex and tightly coupled to specific use cases.
+3. I think Postman is very helpful when we are developing a website because it enables us to see and validate the endpoints from our urls while also checking the
+data that our site receives and processes. The list of features which I like the most are the Postman API, Postman Echo, and Postman Visualizer.
 #### Reflection Publisher-3
